@@ -23,13 +23,13 @@ Base.metadata.create_all(bind=engine)
 # ==========================================
 # FASTAPI APPLICATION
 # ==========================================
-
+from analytics import router as analytics_router
 app = FastAPI(
     title="Subscription Management System",
     description="Product, Plan and Customer Subscription Management API",
     version="1.0.0"
 )
-
+app.include_router(analytics_router)
 
 # ==========================================
 # DATABASE CONNECTION
